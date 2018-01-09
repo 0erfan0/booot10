@@ -1,10 +1,10 @@
 package.path = package.path..';.luarocks/share/lua/5.2/?.lua;.luarocks/share/lua/5.2/?/init.lua'
 package.cpath = package.cpath..';.luarocks/lib/lua/5.2/?.so'
-bot_token = "499452614:AAHyBlPwbTqUvL8-CDevJ0D-h0PJ5f20fHE" -- در اینجا توکن ربات api  را قرار دهید
+bot_token = "474570652:AAFVTqOFLwYRQZvUO_7OpbsTDaCvhhzWVAI" -- در اینجا توکن ربات api  را قرار دهید
 send_api = "https://api.telegram.org/bot"..bot_token
-sudo_id = 470777430 -- ایدی سودوی اصلی را قرار دهید
-MaTaDoRch = '@EarthTeamReBoT' -- یوزرنیم کانال خود را قرار دهید
-MaTaDoRby = '@EarthTeamSupport' -- یوزرنیم خود را قرار دهید
+sudo_id = 377450049 -- ایدی سودوی اصلی را قرار دهید
+MaTaDoRch = '@MaTaDoRTeaM' -- یوزرنیم کانال خود را قرار دهید
+MaTaDoRby = '@MahDiRoO' -- یوزرنیم خود را قرار دهید
 require('./bot/methods')
 require('./bot/utils')
 require('./libs/JSON')
@@ -163,7 +163,7 @@ function create_config( )
     enabled_plugins = {
     "MRCore"
     },
-    sudo_users = {470777430,467058576}, -- در اینجا آیدی ربات api و cli  و سودو ها را وارد کنید
+    sudo_users = {385397250,474570652,385486291,400126262,97476012}, -- در اینجا آیدی ربات api و cli  و سودو ها را وارد کنید
     admins = {},
     disabled_channels = {},
     moderation = {data = ''..MaTaDoRTeaM..'/data/moderation.json'},

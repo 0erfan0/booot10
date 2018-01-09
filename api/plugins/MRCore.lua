@@ -33,7 +33,7 @@ local function plugin_exists( name )
 end
 
 local function list_all_plugins(only_enabled)
-  local tmp = '\n\n[ᴱᵃʳᵗʰ ᵀᵉᵃᵐ ␃ 🌐](Telegram.Me/EarthTeamReBoT)'
+  local tmp = '\n\n[MaTaDoRTeaM](Telegram.Me/MaTaDoRTeaM)'
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
@@ -72,7 +72,7 @@ local function list_plugins(only_enabled)
       v = string.match (v, "(.*)%.lua")
     end
   end
-  local text = text.."\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n[ᴱᵃʳᵗʰ ᵀᵉᵃᵐ ␃ 🌐](Telegram.Me/EarthTeamReBoT)"
+  local text = text.."\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n[MaTaDoRTeaM](Telegram.Me/MaTaDoRTeaM)"
 return text
 end
 
@@ -175,54 +175,54 @@ local settings = data[tostring(GP_id)]["settings"]
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = '💮حداکثر پیام مکرر💮️', callback_data = 'MaTaDoRTeaM'}
+			{text = '✦ حداکثر پیام های مکرر ♻️', callback_data = 'MaTaDoRTeaM'}
 		},
 		{
-			{text = "⏫⏫", callback_data='/floodup:'..GP_id}, 
+			{text = "➕", callback_data='/floodup:'..GP_id}, 
 			{text = tostring(settings.num_msg_max), callback_data="MaTaDoRTeaM"},
-			{text = "⏬⏬", callback_data='/flooddown:'..GP_id}
+			{text = "➖", callback_data='/flooddown:'..GP_id}
 		},
 		{
-			{text = '✳حداکثر حروف مجاز✳', callback_data = 'MaTaDoRTeaM'}
+			{text = '✦ حداکثر حروف مجاز 📜', callback_data = 'MaTaDoRTeaM'}
 		},
 		{
-			{text = "⏫⏫", callback_data='/charup:'..GP_id}, 
+			{text = "➕", callback_data='/charup:'..GP_id}, 
 			{text = tostring(settings.set_char), callback_data="MaTaDoRTeaM"},
-			{text = "⏬⏬", callback_data='/chardown:'..GP_id}
+			{text = "➖", callback_data='/chardown:'..GP_id}
 		},
 		{
-			{text = '🕔تنظیم زمان پیام مکرر🕔', callback_data = 'MaTaDoRTeaM'}
+			{text = '✦ زمان بررسی پیام های مکرر 🎴', callback_data = 'MaTaDoRTeaM'}
 		},
 		{
-			{text = "⏫⏫", callback_data='/floodtimeup:'..GP_id}, 
+			{text = "➕", callback_data='/floodtimeup:'..GP_id}, 
 			{text = tostring(settings.time_check), callback_data="MaTaDoRTeaM"},
-			{text = "⏬⏬", callback_data='/floodtimedown:'..GP_id}
+			{text = "➖", callback_data='/floodtimedown:'..GP_id}
 		},
 		{
-			{text = '💠بازگشت💠', callback_data = '/mutelist:'..GP_id}
+			{text = '✦ بازگشت 🔙', callback_data = '/mutelist:'..GP_id}
 		}				
 	}
     edit_inline(msg.message_id, text, keyboard)
 end
 function options(msg, GP_id)
-text = "به پنل مدیریتی خوش آمدید🌹\nلطفا به ربات ما رائ دهید 🌐\n\n\nᴱᵃʳᵗʰ ᵀᵉᵃᵐ ␃ 🌐"
+text = "به پنل شیشه‌ای مدیریتی گروه خوش آمدید 🌹\nبرای مدیریت گروه میتونید از دکمه های زیر استفاده کنید...\n\nبرای حمایت از ما لطفا به ما رای دهید ❤️"
     keyboard = {}
 	keyboard.inline_keyboard = {
 	    {
-            {text = "✅ "..tostring(redis:get("MaTaDoRLikes")), callback_data="/like:"..GP_id},
-            {text = "❎ "..tostring(redis:get("MaTaDoRDisLikes")), callback_data="/dislike:"..GP_id}
+            {text = "❤️ "..tostring(redis:get("MaTaDoRLikes")), callback_data="/like:"..GP_id},
+            {text = "💔 "..tostring(redis:get("MaTaDoRDisLikes")), callback_data="/dislike:"..GP_id}
         },
         {
-			{text = "💎تنظیمات گروه💎️", callback_data="/settings:"..GP_id}
+			{text = "❃ تنظیمات ⚙️", callback_data="/settings:"..GP_id}
 		},
 		{
-			{text = '🔘اطلاعات گروه🔘', callback_data = '/more:'..GP_id}
+			{text = '❃ اطلاعات گروه و مدیریت لیست‌ها 🔬', callback_data = '/more:'..GP_id}
 		},
 		{
-			{text = '✴پشتیبانی✴️', callback_data = '/matador:'..GP_id}
+			{text = '❃ پشتیبانی ♻️', callback_data = '/matador:'..GP_id}
 		},
 		{
-			{text= '⭕بستن پنل مدیریت⭕' ,callback_data = '/exit:'..GP_id}
+			{text= '❃ بستن پنل شیشه‌ای 🔚' ,callback_data = '/exit:'..GP_id}
 		}					
 	}
     edit_inline(msg.message_id, text, keyboard)
@@ -386,154 +386,154 @@ function setting(msg, data, GP_id)
 		mute_tgservice = 'no'
 	end
  text = '*به تنظیمات قفلی گروه خوش آمدید* 🤖'
- if(lock_link=="yes")then lock_link_text = "✅"elseif(lock_link=="kick")then lock_link_text = "📛"elseif(lock_link=="no")then lock_link_text = "❎"elseif(lock_link=="warn")then lock_link_text = "🆘"end
- if(lock_edit=="yes")then lock_edit_text = "✅"elseif(lock_edit=="kick")then lock_edit_text = "📛"elseif(lock_edit=="no")then lock_edit_text = "❎"elseif(lock_edit=="warn")then lock_edit_text = "🆘"end
- if(lock_tag=="yes")then lock_tag_text = "✅"elseif(lock_tag=="kick")then lock_tag_text = "📛"elseif(lock_tag=="no")then lock_tag_text = "❎"elseif(lock_tag=="warn")then lock_tag_text = "🆘"end
- if(lock_username=="yes")then lock_username_text = "✅"elseif(lock_username=="kick")then lock_username_text = "📛"elseif(lock_username=="no")then lock_username_text = "❎"elseif(lock_username=="warn")then lock_username_text = "🆘"end
- if(lock_mention=="yes")then lock_mention_text = "✅"elseif(lock_mention=="kick")then lock_mention_text = "📛"elseif(lock_mention=="no")then lock_mention_text = "❎"elseif(lock_mention=="warn")then lock_mention_text = "🆘"end
- if(lock_arabic=="yes")then lock_arabic_text = "✅"elseif(lock_arabic=="kick")then lock_arabic_text = "📛"elseif(lock_arabic=="no")then lock_arabic_text = "❎"elseif(lock_arabic=="warn")then lock_arabic_text = "🆘"end
- if(lock_english=="yes")then lock_english_text = "✅"elseif(lock_english=="kick")then lock_english_text = "📛"elseif(lock_english=="no")then lock_english_text = "❎"elseif(lock_english=="warn")then lock_english_text = "🆘"end
- if(lock_webpage=="yes")then lock_webpage_text = "✅"elseif(lock_webpage=="kick")then lock_webpage_text = "📛"elseif(lock_webpage=="no")then lock_webpage_text = "❎"elseif(lock_webpage=="warn")then lock_webpage_text = "🆘"end
- if(lock_markdown=="yes")then lock_markdown_text = "✅"elseif(lock_markdown=="kick")then lock_markdown_text = "📛"elseif(lock_markdown=="no")then lock_markdown_text = "❎"elseif(lock_markdown=="warn")then lock_markdown_text = "🆘"end
- if(mute_gif=="yes")then mute_gif_text = "✅"elseif(mute_gif=="kick")then mute_gif_text = "📛"elseif(mute_gif=="no")then mute_gif_text = "❎"elseif(mute_gif=="warn")then mute_gif_text = "🆘"end
- if(mute_text=="yes")then mute_text_text = "✅"elseif(mute_text=="kick")then mute_text_text = "📛"elseif(mute_text=="no")then mute_text_text = "❎"elseif(mute_text=="warn")then mute_text_text = "🆘"end  
- if(mute_inline=="yes")then mute_inline_text = "✅"elseif(mute_inline=="kick")then mute_inline_text = "📛"elseif(mute_inline=="no")then mute_inline_text = "❎"elseif(mute_inline=="warn")then mute_inline_text = "🆘"end 
- if(mute_game=="yes")then mute_game_text = "✅"elseif(mute_game=="kick")then mute_game_text = "📛"elseif(mute_game=="no")then mute_game_text = "❎"elseif(mute_game=="warn")then mute_game_text = "🆘"end 
- if(mute_photo=="yes")then mute_photo_text = "✅"elseif(mute_photo=="kick")then mute_photo_text = "📛"elseif(mute_photo=="no")then mute_photo_text = "❎"elseif(mute_photo=="warn")then mute_photo_text = "🆘"end
+ if(lock_link=="yes")then lock_link_text = "فعال✅"elseif(lock_link=="kick")then lock_link_text = "حالت اخراج📛"elseif(lock_link=="no")then lock_link_text = "غیرفعال❌"elseif(lock_link=="warn")then lock_link_text = "حالت اخطار🚷"end
+ if(lock_edit=="yes")then lock_edit_text = "فعال✅"elseif(lock_edit=="kick")then lock_edit_text = "حالت اخراج📛"elseif(lock_edit=="no")then lock_edit_text = "غیرفعال❌"elseif(lock_edit=="warn")then lock_edit_text = "حالت اخطار🚷"end
+ if(lock_tag=="yes")then lock_tag_text = "فعال✅"elseif(lock_tag=="kick")then lock_tag_text = "حالت اخراج📛"elseif(lock_tag=="no")then lock_tag_text = "غیرفعال❌"elseif(lock_tag=="warn")then lock_tag_text = "حالت اخطار🚷"end
+ if(lock_username=="yes")then lock_username_text = "فعال✅"elseif(lock_username=="kick")then lock_username_text = "حالت اخراج📛"elseif(lock_username=="no")then lock_username_text = "غیرفعال❌"elseif(lock_username=="warn")then lock_username_text = "حالت اخطار🚷"end
+ if(lock_mention=="yes")then lock_mention_text = "فعال✅"elseif(lock_mention=="kick")then lock_mention_text = "حالت اخراج📛"elseif(lock_mention=="no")then lock_mention_text = "غیرفعال❌"elseif(lock_mention=="warn")then lock_mention_text = "حالت اخطار🚷"end
+ if(lock_arabic=="yes")then lock_arabic_text = "فعال✅"elseif(lock_arabic=="kick")then lock_arabic_text = "حالت اخراج📛"elseif(lock_arabic=="no")then lock_arabic_text = "غیرفعال❌"elseif(lock_arabic=="warn")then lock_arabic_text = "حالت اخطار🚷"end
+ if(lock_english=="yes")then lock_english_text = "فعال✅"elseif(lock_english=="kick")then lock_english_text = "حالت اخراج📛"elseif(lock_english=="no")then lock_english_text = "غیرفعال❌"elseif(lock_english=="warn")then lock_english_text = "حالت اخطار🚷"end
+ if(lock_webpage=="yes")then lock_webpage_text = "فعال✅"elseif(lock_webpage=="kick")then lock_webpage_text = "حالت اخراج📛"elseif(lock_webpage=="no")then lock_webpage_text = "غیرفعال❌"elseif(lock_webpage=="warn")then lock_webpage_text = "حالت اخطار🚷"end
+ if(lock_markdown=="yes")then lock_markdown_text = "فعال✅"elseif(lock_markdown=="kick")then lock_markdown_text = "حالت اخراج📛"elseif(lock_markdown=="no")then lock_markdown_text = "غیرفعال❌"elseif(lock_markdown=="warn")then lock_markdown_text = "حالت اخطار🚷"end
+ if(mute_gif=="yes")then mute_gif_text = "فعال✅"elseif(mute_gif=="kick")then mute_gif_text = "حالت اخراج📛"elseif(mute_gif=="no")then mute_gif_text = "غیرفعال❌"elseif(mute_gif=="warn")then mute_gif_text = "حالت اخطار🚷"end
+ if(mute_text=="yes")then mute_text_text = "فعال✅"elseif(mute_text=="kick")then mute_text_text = "حالت اخراج📛"elseif(mute_text=="no")then mute_text_text = "غیرفعال❌"elseif(mute_text=="warn")then mute_text_text = "حالت اخطار🚷"end  
+ if(mute_inline=="yes")then mute_inline_text = "فعال✅"elseif(mute_inline=="kick")then mute_inline_text = "حالت اخراج📛"elseif(mute_inline=="no")then mute_inline_text = "غیرفعال❌"elseif(mute_inline=="warn")then mute_inline_text = "حالت اخطار🚷"end 
+ if(mute_game=="yes")then mute_game_text = "فعال✅"elseif(mute_game=="kick")then mute_game_text = "حالت اخراج📛"elseif(mute_game=="no")then mute_game_text = "غیرفعال❌"elseif(mute_game=="warn")then mute_game_text = "حالت اخطار🚷"end 
+ if(mute_photo=="yes")then mute_photo_text = "فعال✅"elseif(mute_photo=="kick")then mute_photo_text = "حالت اخراج📛"elseif(mute_photo=="no")then mute_photo_text = "غیرفعال❌"elseif(mute_photo=="warn")then mute_photo_text = "حالت اخطار🚷"end
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
 			{text = "✦ قفل ویرایش ✏️: "..lock_edit_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/lockeditd:"..GP_id},
-		{text = "📛", callback_data="/lockeditw:"..GP_id},
-		{text = "🆘", callback_data="/lockeditk:"..GP_id},
-		{text = "❎", callback_data="/lockedito:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockeditd:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockeditw:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockeditk:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockedito:"..GP_id}
 		},
 		{
 			{text = "✦ قفل لینک 📎: "..lock_link_text.."", callback_data='MaTaDoRTeaM'}
 		},
 		{
-		{text = "✅", callback_data="/locklinkd:"..GP_id},
-		{text = "📛", callback_data="/locklinkk:"..GP_id},
-		{text = "🆘", callback_data="/locklinkw:"..GP_id},
-		{text = "❎", callback_data="/locklinko:"..GP_id}
+		{text = "ϟ فعال", callback_data="/locklinkd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/locklinkk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/locklinkw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/locklinko:"..GP_id}
 		},
 		{
 			{text = "✦ قفل تگ #️⃣ : "..lock_tag_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/locktagsd:"..GP_id},
-		{text = "📛", callback_data="/locktagsk:"..GP_id},
-		{text = "🆘", callback_data="/locktagsw:"..GP_id},
-		{text = "❎", callback_data="/locktagso:"..GP_id}
+		{text = "ϟ فعال", callback_data="/locktagsd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/locktagsk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/locktagsw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/locktagso:"..GP_id}
 		},
 		{
 			{text = "✦ قفل نام کاربری 🆔:"..lock_username_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/lockusernamed:"..GP_id},
-		{text = "📛", callback_data="/lockusernamek:"..GP_id},
-		{text = "🆘", callback_data="/lockusernamew:"..GP_id},
-		{text = "❎", callback_data="/lockusernameo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockusernamed:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockusernamek:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockusernamew:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockusernameo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل فراخوانی ⚠️: "..lock_mention_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/lockmentiond:"..GP_id},
-		{text = "📛", callback_data="/lockmentionk:"..GP_id},
-		{text = "🆘", callback_data="/lockmentionw:"..GP_id},
-		{text = "❎", callback_data="/lockmentiono:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockmentiond:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockmentionk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockmentionw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockmentiono:"..GP_id}
 		},
 		{
 			{text = "✦ قفل عربی 🔠: "..lock_arabic_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/lockarabicd:"..GP_id},
-		{text = "📛", callback_data="/lockarabick:"..GP_id},
-		{text = "🆘", callback_data="/lockarabicw:"..GP_id},
-		{text = "❎", callback_data="/lockarabico:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockarabicd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockarabick:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockarabicw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockarabico:"..GP_id}
 		},
 		{
 			{text = "✦ قفل انگلیسی 🔠: "..lock_english_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/lockenglishd:"..GP_id},
-		{text = "📛", callback_data="/lockenglishk:"..GP_id},
-		{text = "🆘", callback_data="/lockenglishw:"..GP_id},
-		{text = "❎", callback_data="/lockenglisho:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockenglishd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockenglishk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockenglishw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockenglisho:"..GP_id}
 		},
 		{
 			{text = "✦ قفل صفحات وب 🌐: "..lock_webpage_text.."", callback_data='MaTaDoRTeaM'}, 
 		},
 		{
-		{text = "✅", callback_data="/lockwebpaged:"..GP_id},
-		{text = "📛", callback_data="/lockwebpagek:"..GP_id},
-		{text = "🆘", callback_data="/lockwebpagew:"..GP_id},
-		{text = "❎", callback_data="/lockwebpageo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockwebpaged:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockwebpagek:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockwebpagew:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockwebpageo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل فونت 💱: "..lock_markdown_text.."", callback_data='MaTaDoRTeaM'}, 
 		},
 		{
-		{text = "✅", callback_data="/lockmarkdownd:"..GP_id},
-		{text = "📛", callback_data="/lockmarkdownk:"..GP_id},
-		{text = "🆘", callback_data="/lockmarkdownw:"..GP_id},
-		{text = "❎", callback_data="/lockmarkdowno:"..GP_id}
+		{text = "ϟ فعال", callback_data="/lockmarkdownd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/lockmarkdownk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/lockmarkdownw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/lockmarkdowno:"..GP_id}
 		},
 		{
 			{text = "✦ قفل تصاویر متحرک 🎇: "..mute_gif_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/mutegifd:"..GP_id},
-		{text = "📛", callback_data="/mutegifk:"..GP_id},
-		{text = "🆘", callback_data="/mutegifw:"..GP_id},
-		{text = "❎", callback_data="/mutegifo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutegifd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutegifk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutegifw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutegifo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل متن 🔤: "..mute_text_text.."", callback_data='MaTaDoRTeaM'}  
 		},
 		{
-		{text = "✅", callback_data="/mutetextd:"..GP_id},
-		{text = "📛", callback_data="/mutetextk:"..GP_id},
-		{text = "🆘", callback_data="/mutetextw:"..GP_id},
-		{text = "❎", callback_data="/mutetexto:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutetextd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutetextk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutetextw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutetexto:"..GP_id}
 		},
 		{
 			{text = "✦ قفل اینلاین ✨: "..mute_inline_text.."", callback_data='MaTaDoRTeaM'}, 
 		},
 		{
-		{text = "✅", callback_data="/muteinlined:"..GP_id},
-		{text = "📛", callback_data="/muteinlinek:"..GP_id},
-		{text = "🆘", callback_data="/muteinlinew:"..GP_id},
-		{text = "❎", callback_data="/muteinlineo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/muteinlined:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/muteinlinek:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/muteinlinew:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/muteinlineo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل بازی 🎮: "..mute_game_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/mutegamed:"..GP_id},
-		{text = "📛", callback_data="/mutegamek:"..GP_id},
-		{text = "🆘", callback_data="/mutegamew:"..GP_id},
-		{text = "❎", callback_data="/mutegameo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutegamed:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutegamek:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutegamew:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutegameo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل عکس 🌄: "..mute_photo_text.."", callback_data='MaTaDoRTeaM'}  
 		},
 		{
-		{text = "✅", callback_data="/mutephotod:"..GP_id},
-		{text = "📛", callback_data="/mutephotok:"..GP_id},
-		{text = "🆘", callback_data="/mutephotow:"..GP_id},
-		{text = "❎", callback_data="/mutephotoo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutephotod:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutephotok:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutephotow:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutephotoo:"..GP_id}
 		},
 -- جای قبلی گزینه خوش آمد گویی
 		{
-			{text = '🔧تنظیمات بیشتر🔧️', callback_data = '/mutelist:'..GP_id}
+			{text = '✦ تنظیمات بیشتر ♨️', callback_data = '/mutelist:'..GP_id}
 		},
 		{
-			{text = '💠بازگشت💠', callback_data = '/option:'..GP_id}
+			{text = '✦ بازگشت 🔙', callback_data = '/option:'..GP_id}
 		}				
 	}
     edit_inline(msg.message_id, text, keyboard)
@@ -706,104 +706,104 @@ function mutelists(msg, data, GP_id)
 		mute_tgservice = 'no'
 	end
 	 text = '*به تنظیمات قفلی(2) گروه خوش آمدید* 🤖'
-    if(mute_video=="yes")then mute_video_text = "✅"elseif(mute_video=="kick")then mute_video_text = "📛"elseif(mute_video=="no")then mute_video_text = "❎"elseif(mute_video=="warn")then mute_video_text = "🆘"end
-	if(mute_audio=="yes")then mute_audio_text = "✅"elseif(mute_audio=="kick")then mute_audio_text = "📛"elseif(mute_audio=="no")then mute_audio_text = "❎"elseif(mute_audio=="warn")then mute_audio_text = "🆘"end
-	if(mute_voice=="yes")then mute_voice_text = "✅"elseif(mute_voice=="kick")then mute_voice_text = "📛"elseif(mute_voice=="no")then mute_voice_text = "❎"elseif(mute_voice=="warn")then mute_voice_text = "🆘"end
-	if(mute_sticker=="yes")then mute_sticker_text = "✅"elseif(mute_sticker=="kick")then mute_sticker_text = "📛"elseif(mute_sticker=="no")then mute_sticker_text = "❎"elseif(mute_sticker=="warn")then mute_sticker_text = "🆘"end
-	if(mute_contact=="yes")then mute_contact_text = "✅"elseif(mute_contact=="kick")then mute_contact_text = "📛"elseif(mute_contact=="no")then mute_contact_text = "❎"elseif(mute_contact=="warn")then mute_contact_text = "🆘"end
-	if(mute_forward=="yes")then mute_forward_text = "✅"elseif(mute_forward=="kick")then mute_forward_text = "📛"elseif(mute_forward=="no")then mute_forward_text = "❎"elseif(mute_forward=="warn")then mute_forward_text = "🆘"end
-	if(mute_location=="yes")then mute_location_text = "✅"elseif(mute_location=="kick")then mute_location_text = "📛"elseif(mute_location=="no")then mute_location_text = "❎"elseif(mute_location=="warn")then mute_location_text = "🆘"end
-	if(mute_document=="yes")then mute_document_text = "✅"elseif(mute_document=="kick")then mute_document_text = "📛"elseif(mute_document=="no")then mute_document_text = "❎"elseif(mute_document=="warn")then mute_document_text = "🆘"end
-	if(mute_keyboard=="yes")then mute_keyboard_text = "✅"elseif(mute_keyboard=="kick")then mute_keyboard_text = "📛"elseif(mute_keyboard=="no")then mute_keyboard_text = "❎"elseif(mute_keyboard=="warn")then mute_keyboard_text = "🆘"end
-	if(mute_tgservice=="yes")then mute_tgservice_text = "✅"elseif(mute_tgservice=="no")then mute_tgservice_text = "❎"end
-	if(lock_pin=="yes")then lock_pin_text = "✅"elseif(lock_pin=="no")then lock_pin_text = "❎"end
-	if(lock_bots=="yes")then lock_bots_text = "✅"elseif(lock_bots=="no")then lock_bots_text = "❎"end
-	if(lock_join=="yes")then lock_join_text = "✅"elseif(lock_join=="no")then lock_join_text = "❎"end
-	if(lock_flood=="yes")then lock_flood_text = "✅"elseif(lock_flood=="no")then lock_flood_text = "❎"end
-	if(lock_spam=="yes")then lock_spam_text = "✅"elseif(lock_spam=="no")then lock_spam_text = "❎"end
-	if(group_welcone=="yes")then group_welcone_text = "✅"elseif(group_welcone=="no")then group_welcone_text = "❎"end -- مینستبمیتبمیسنتبمتیسب5یب5یس5ب5یس5بیسب5بس
+    if(mute_video=="yes")then mute_video_text = "فعال✅"elseif(mute_video=="kick")then mute_video_text = "حالت اخراج📛"elseif(mute_video=="no")then mute_video_text = "غیرفعال❌"elseif(mute_video=="warn")then mute_video_text = "حالت اخطار🚷"end
+	if(mute_audio=="yes")then mute_audio_text = "فعال✅"elseif(mute_audio=="kick")then mute_audio_text = "حالت اخراج📛"elseif(mute_audio=="no")then mute_audio_text = "غیرفعال❌"elseif(mute_audio=="warn")then mute_audio_text = "حالت اخطار🚷"end
+	if(mute_voice=="yes")then mute_voice_text = "فعال✅"elseif(mute_voice=="kick")then mute_voice_text = "حالت اخراج📛"elseif(mute_voice=="no")then mute_voice_text = "غیرفعال❌"elseif(mute_voice=="warn")then mute_voice_text = "حالت اخطار🚷"end
+	if(mute_sticker=="yes")then mute_sticker_text = "فعال✅"elseif(mute_sticker=="kick")then mute_sticker_text = "حالت اخراج📛"elseif(mute_sticker=="no")then mute_sticker_text = "غیرفعال❌"elseif(mute_sticker=="warn")then mute_sticker_text = "حالت اخطار🚷"end
+	if(mute_contact=="yes")then mute_contact_text = "فعال✅"elseif(mute_contact=="kick")then mute_contact_text = "حالت اخراج📛"elseif(mute_contact=="no")then mute_contact_text = "غیرفعال❌"elseif(mute_contact=="warn")then mute_contact_text = "حالت اخطار🚷"end
+	if(mute_forward=="yes")then mute_forward_text = "فعال✅"elseif(mute_forward=="kick")then mute_forward_text = "حالت اخراج📛"elseif(mute_forward=="no")then mute_forward_text = "غیرفعال❌"elseif(mute_forward=="warn")then mute_forward_text = "حالت اخطار🚷"end
+	if(mute_location=="yes")then mute_location_text = "فعال✅"elseif(mute_location=="kick")then mute_location_text = "حالت اخراج📛"elseif(mute_location=="no")then mute_location_text = "غیرفعال❌"elseif(mute_location=="warn")then mute_location_text = "حالت اخطار🚷"end
+	if(mute_document=="yes")then mute_document_text = "فعال✅"elseif(mute_document=="kick")then mute_document_text = "حالت اخراج📛"elseif(mute_document=="no")then mute_document_text = "غیرفعال❌"elseif(mute_document=="warn")then mute_document_text = "حالت اخطار🚷"end
+	if(mute_keyboard=="yes")then mute_keyboard_text = "فعال✅"elseif(mute_keyboard=="kick")then mute_keyboard_text = "حالت اخراج📛"elseif(mute_keyboard=="no")then mute_keyboard_text = "غیرفعال❌"elseif(mute_keyboard=="warn")then mute_keyboard_text = "حالت اخطار🚷"end
+	if(mute_tgservice=="yes")then mute_tgservice_text = "فعال✅"elseif(mute_tgservice=="no")then mute_tgservice_text = "غیرفعال❌"end
+	if(lock_pin=="yes")then lock_pin_text = "فعال✅"elseif(lock_pin=="no")then lock_pin_text = "غیرفعال❌"end
+	if(lock_bots=="yes")then lock_bots_text = "فعال✅"elseif(lock_bots=="no")then lock_bots_text = "غیرفعال❌"end
+	if(lock_join=="yes")then lock_join_text = "فعال✅"elseif(lock_join=="no")then lock_join_text = "غیرفعال❌"end
+	if(lock_flood=="yes")then lock_flood_text = "فعال✅"elseif(lock_flood=="no")then lock_flood_text = "غیرفعال❌"end
+	if(lock_spam=="yes")then lock_spam_text = "فعال✅"elseif(lock_spam=="no")then lock_spam_text = "غیرفعال❌"end
+	if(group_welcone=="yes")then group_welcone_text = "فعال✅"elseif(group_welcone=="no")then group_welcone_text = "غیرفعال❌"end -- مینستبمیتبمیسنتبمتیسب5یب5یس5ب5یس5بیسب5بس
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
 		{text = "✦ قفل فیلم 🎥: "..mute_video_text.."", callback_data='MaTaDoRTeaM'}
 		},
 		{
-		{text = "✅", callback_data="/mutevideod:"..GP_id},
-		{text = "📛", callback_data="/mutevideok:"..GP_id},
-		{text = "🆘", callback_data="/mutevideow:"..GP_id},
-		{text = "❎", callback_data="/mutevideoo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutevideod:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutevideok:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutevideow:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutevideoo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل آهنگ 🎵: "..mute_audio_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/muteaudiod:"..GP_id},
-		{text = "📛", callback_data="/muteaudiok:"..GP_id},
-		{text = "🆘", callback_data="/muteaudiow:"..GP_id},
-		{text = "❎", callback_data="/muteaudioo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/muteaudiod:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/muteaudiok:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/muteaudiow:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/muteaudioo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل ویس 🎙: "..mute_voice_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/mutevoiced:"..GP_id},
-		{text = "📛", callback_data="/mutevoicek:"..GP_id},
-		{text = "🆘", callback_data="/mutevoicew:"..GP_id},
-		{text = "❎", callback_data="/mutevoiceo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutevoiced:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutevoicek:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutevoicew:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutevoiceo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل استیکر 🔰: "..mute_sticker_text.."", callback_data='MaTaDoRTeaM'}
 		},
 		{
-		{text = "✅", callback_data="/mutestickerd:"..GP_id},
-		{text = "📛", callback_data="/mutestickerk:"..GP_id},
-		{text = "🆘", callback_data="/mutestickerw:"..GP_id},
-		{text = "❎", callback_data="/mutestickero:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutestickerd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutestickerk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutestickerw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutestickero:"..GP_id}
 		},
 		{
 			{text = "✦ قفل مخاطب ☎️: "..mute_contact_text.."", callback_data='MaTaDoRTeaM'}
 		},
 		{
-		{text = "✅", callback_data="/mutecontactd:"..GP_id},
-		{text = "📛", callback_data="/mutecontactk:"..GP_id},
-		{text = "🆘", callback_data="/mutecontactw:"..GP_id},
-		{text = "❎", callback_data="/mutecontacto:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutecontactd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutecontactk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutecontactw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutecontacto:"..GP_id}
 		},
 		{
 			{text = "✦ قفل نقل قول 🔗: "..mute_forward_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/muteforwardd:"..GP_id},
-		{text = "📛", callback_data="/muteforwardk:"..GP_id},
-		{text = "🆘", callback_data="/muteforwardw:"..GP_id},
-		{text = "❎", callback_data="/muteforwardo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/muteforwardd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/muteforwardk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/muteforwardw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/muteforwardo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل مکان 📡: "..mute_location_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/mutelocationd:"..GP_id},
-		{text = "📛", callback_data="/mutelocationk:"..GP_id},
-		{text = "🆘", callback_data="/mutelocationw:"..GP_id},
-		{text = "❎", callback_data="/mutelocationo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutelocationd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutelocationk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutelocationw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutelocationo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل فایل 📂: "..mute_document_text.."", callback_data='MaTaDoRTeaM'}  
 		},
 		{
-		{text = "✅", callback_data="/mutedocumentd:"..GP_id},
-		{text = "📛", callback_data="/mutedocumentk:"..GP_id},
-		{text = "🆘", callback_data="/mutedocumentw:"..GP_id},
-		{text = "❎", callback_data="/mutedocumento:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutedocumentd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutedocumentk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutedocumentw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutedocumento:"..GP_id}
 		},
 		{
 			{text = "✦ قفل کیبورد 🎹: "..mute_keyboard_text.."", callback_data='MaTaDoRTeaM'} 
 		},
 		{
-		{text = "✅", callback_data="/mutekeyboardd:"..GP_id},
-		{text = "📛", callback_data="/mutekeyboardk:"..GP_id},
-		{text = "🆘", callback_data="/mutekeyboardw:"..GP_id},
-		{text = "❎", callback_data="/mutekeyboardo:"..GP_id}
+		{text = "ϟ فعال", callback_data="/mutekeyboardd:"..GP_id},
+		{text = "ϟ اخراج", callback_data="/mutekeyboardk:"..GP_id},
+		{text = "ϟ اخطار", callback_data="/mutekeyboardw:"..GP_id},
+		{text = "ϟ غیرفعال", callback_data="/mutekeyboardo:"..GP_id}
 		},
 		{
 			{text = "✦ قفل سرویس تلگرام 📡", callback_data='MaTaDoRTeaM'}, 
@@ -834,10 +834,10 @@ function mutelists(msg, data, GP_id)
 			{text = group_welcone_text, callback_data="/welcome:"..GP_id} -- خوش آمد گویی
 		},
 		{
-			{text = '🔧تنظیمات بیشتر🔧️', callback_data = '/moresettings:'..GP_id}
+			{text = '✦ تنظیمات بیشتر ♨️', callback_data = '/moresettings:'..GP_id}
 		},
 		{
-			{text = '💠بازگشت💠', callback_data = '/settings:'..GP_id}
+			{text = '✦ بازگشت 🔙', callback_data = '/settings:'..GP_id}
 		}				
 	}
     edit_inline(msg.message_id, text, keyboard)
@@ -953,27 +953,27 @@ local chatid = "-"..msg.query:match("%d+")
 	keyboard = {}
 	keyboard.inline_keyboard = {
 	    {
-            {text = "✅ "..tostring(redis:get("MaTaDoRLikes")), callback_data="/like:"..chatid},
-            {text = "❎ "..tostring(redis:get("MaTaDoRDisLikes")), callback_data="/dislike:"..chatid}
+            {text = "❤️ "..tostring(redis:get("MaTaDoRLikes")), callback_data="/like:"..chatid},
+            {text = "💔 "..tostring(redis:get("MaTaDoRDisLikes")), callback_data="/dislike:"..chatid}
         },
         {
-			{text = "💎تنظیمات گروه💎️", callback_data="/settings:"..chatid}
+			{text = "❃ تنظیمات ⚙️", callback_data="/settings:"..chatid}
 		},
 		{
-			{text = '🔘اطلاعات گروه🔘', callback_data = '/more:'..chatid}
+			{text = '❃ اطلاعات گروه و مدیریت لیست‌ها 🔬', callback_data = '/more:'..chatid}
 		},
 		{
-			{text = '✴پشتیبانی✴️', callback_data = '/matador:'..chatid}
+			{text = '❃ پشتیبانی ♻️', callback_data = '/matador:'..chatid}
 		},
 		{
-			{text= '⭕بستن پنل مدیریت⭕' ,callback_data = '/exit:'..chatid}
+			{text= '❃ بستن پنل شیشه‌ای 🔚' ,callback_data = '/exit:'..chatid}
 		}					
 	}
-	send_inline(msg.id,'settings','Group Option','Tap Here','به پنل مدیریتی خوش آمدید🌹\nلطفا به ربات ما رائ دهید 🌐\n\n\nᴱᵃʳᵗʰ ᵀᵉᵃᵐ ␃ 🌐️',keyboard)
+	send_inline(msg.id,'settings','Group Option','Tap Here','به پنل شیشه‌ای مدیریتی گروه خوش آمدید 🌹\nبرای مدیریت گروه میتونید از دکمه های زیر استفاده کنید...\n\nبرای حمایت از ما لطفا به ما رای دهید ❤️',keyboard)
 end
 if msg.cb then
 if matches[1] == '/option' then
-if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود ?" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
+if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
 options(msg, matches[2])
 end
 end
@@ -1028,33 +1028,27 @@ end
 if matches[1] == '/nerkh' then
 if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
 	local text = [[
-نرخ ربات های تیم زمین🌐
- ᴱᵃʳᵗʰ ᵀᵉᵃᵐ ␃ 🌐
-💸نرخ فروش برای1⃣ربات
-1⃣ماهه👈`50000`﷼
-3⃣ماهه👈`100000`﷼
-دائم👈`200000`﷼
-💸نرخ فروش برای2⃣ربات
-1⃣ماهه👈`70000`﷼
-3⃣ماهه👈`120000`﷼
-دائم👈`230000`﷼
-💸نرخ فروش برای3⃣ربات
-1⃣ماهه👈`100000`﷼
-3⃣ماهه👈`150000`﷼
-دائم👈`250000`﷼
+*💵 نرخ فروش ربات* 
+*⚜️  ᴹᵃ̶ᵀ̶ᵃ̶ᴰ̶ᵒ̶ᴿ̶ ̶P̶l̶u̶s ⚜️*
 
-1⃣`توجه داشته باشید ربات به مدت 6 ساعت برای تست در گروه نصب میشود و بعد تست و رضایت کامل اعمالات صورت میگیرد`
+*✳️برای تمام گروه ها‌*
+ 
+*➰1 ماهه 10 هزا تومان 
+➰2 ماهه  15 هزار تومان
+➰3 ماهه  20 هزار تومان
+➰4 ماهه  25 هزار تومان*
 
-2⃣ `همچنین باید قبل از پایان مهلت تست رضایت کامل هزینه پرداخت شود درغیر این صورت ربات خارج میشود`
+_🔰 نکته مهم :_
 
-3⃣ `لازم به ذکر است اولویت بصورت پرداخت کارت به کارت یا درگاه میباشد`
+`🎖توجه داشته باشید ربات به مدت  ۴۸ ساعت رایگان برای تست در گروه نصب می‌شود و بعد تست و رضایت کامل اعمالات صورت می‌گیرد`
 
+*برای خرید به گروه پشتیبانی مراجعه و اعلام کنید:*
 🆔 : ]]..check_markdown(MaTaDoRch)..[[
 ]]
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text= '💠بازگشت💠' ,callback_data = '/matador:'..matches[2]}
+			{text= '✦ بازگشت 🔙' ,callback_data = '/matador:'..matches[2]}
 		}				
 	}
     edit_inline(msg.message_id, text, keyboard)
@@ -2224,30 +2218,30 @@ end
 			
 if matches[1] == '/more' then
 	if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
-        text = 'به اطلاعات گروه خوشامدید🌹\n\n\nᴱᵃʳᵗʰ ᵀᵉᵃᵐ ␃ 🌐'
+        text = '*به ادامه تنظیمات کلی خوشآمدید* 🤖'
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "👤مالکان👤", callback_data="/ownerlist:"..matches[2]},
-				{text = "👮مدیران👮", callback_data="/modlist:"..matches[2]}
+				{text = "✦ لیست مالکین 👥", callback_data="/ownerlist:"..matches[2]},
+				{text = "✦ لیست مدیران 👮🏻", callback_data="/modlist:"..matches[2]}
 			},
 			{
-				{text = "🔇لیست سکوت🔇", callback_data="/silentlist:"..matches[2]},
-				{text = "📝لیست فیلتر📝", callback_data="/filterlist:"..matches[2]}
+				{text = "✦ لیست سایلنت 🚷", callback_data="/silentlist:"..matches[2]},
+				{text = "✦ لیست فیلتر 📝", callback_data="/filterlist:"..matches[2]}
 			},
 			{
-				{text = "⛔لیست مسدود⛔", callback_data="/bans:"..matches[2]},
-				{text = "🛡لیست سفید🛡", callback_data="/whitelists:"..matches[2]}
+				{text = "✦ لیست بن 🚫", callback_data="/bans:"..matches[2]},
+				{text = "✦ لیست سفید 🛡", callback_data="/whitelists:"..matches[2]}
         },
 			{
-				{text = "🔗لینک گپ🔗", callback_data="/link:"..matches[2]},
-				{text = "🔱قوانین گپ🔱", callback_data="/rules:"..matches[2]}
+				{text = "✦ لینک گروه 🏷", callback_data="/link:"..matches[2]},
+				{text = "✦ قوانین گروه 🔮", callback_data="/rules:"..matches[2]}
 			},
 			{
-				{text = "✉خوشامد✉", callback_data="/showwlc:"..matches[2]},
+				{text = "✦ پیام خوشآمد 🔖", callback_data="/showwlc:"..matches[2]},
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/option:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/option:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2258,9 +2252,9 @@ if matches[1] == '/ownerlist' then
 	if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
 		local i = 1
 		if next(data[tostring(matches[2])]['owners']) == nil then --fix way
-			text = "💢هیچ مالکی ثبت نشده است💢"
+			text = "_هیچ مالکی برای گروه تعیین نشده_"
 		else
-			text = "لیست مالکان گروه👤\n"
+			text = "_لیست مالکین گروه :_\n"
 			for k,v in pairs(data[tostring(matches[2])]['owners']) do
 				text = text ..i.. '- '..v..' [' ..k.. '] \n'
 				i = i + 1
@@ -2269,10 +2263,10 @@ if matches[1] == '/ownerlist' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "✨پاکسازی مالکان✨", callback_data="/cleanowners:"..matches[2]}
+				{text = "✦ برکناری تمام مالکین", callback_data="/cleanowners:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2284,9 +2278,9 @@ if matches[1] == '/cleanowners' then
     get_alert(msg.cb_id, "شما ادمین ربات نیستید")
 	else
 		if next(data[tostring(matches[2])]['owners']) == nil then
-			text = "💢هیچ مالکی ثبت نشده است💢"
+			text = "_هیچ مالکی برای گروه تعیین نشده_"
 		else
-			text = "✔تمام مالکان برکنار شدند✔"
+			text = "_تمام مالکین از مقام خود برکنار شدند_"
 			for k,v in pairs(data[tostring(matches[2])]['owners']) do
 				data[tostring(matches[2])]['owners'][tostring(k)] = nil
 				save_data(_config.moderation.data, data)
@@ -2295,7 +2289,7 @@ if matches[1] == '/cleanowners' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/ownerlist:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/ownerlist:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2305,10 +2299,10 @@ end
 if matches[1] == '/filterlist' then
 	if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
 		if next(data[tostring(matches[2])]['filterlist']) == nil then --fix way
-			text = "💢هیچ کلمه ای فیلتر نشده است💢"
+			text = "_لیست کلمات فیلتر شده خالی است_"
 		else 
 			local i = 1
-			text = 'لیست فیلتر📝\n'
+			text = '_لیست کلمات فیلتر شده :_\n'
 			for k,v in pairs(data[tostring(matches[2])]['filterlist']) do
 				text = text..''..i..' - '..check_markdown(k)..'\n'
 				i = i + 1
@@ -2317,10 +2311,10 @@ if matches[1] == '/filterlist' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "✨پاک کردن فیلتر لیست✨", callback_data="/cleanfilterlist:"..matches[2]}
+				{text = "✦ پاک کردن", callback_data="/cleanfilterlist:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2330,9 +2324,9 @@ end
 if matches[1] == '/cleanfilterlist' then
 	if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
 		if next(data[tostring(matches[2])]['filterlist']) == nil then
-			text = "💢هیچ کلمه ای فیلتر نشده است💢"
+			text = "_لیست کلمات فیلتر شده خالی است_"
 		else
-			text = "✔لیست فیلتر خالی شد✔"
+			text = "_لیست کلمات فیلتر پاک شد_"
 			for k,v in pairs(data[tostring(matches[2])]['filterlist']) do
 				data[tostring(matches[2])]['filterlist'][tostring(k)] = nil
 				save_data(_config.moderation.data, data)
@@ -2341,7 +2335,7 @@ if matches[1] == '/cleanfilterlist' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/filterlist:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/filterlist:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2352,9 +2346,9 @@ if matches[1] == '/modlist' then
 	if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ای به صورت خودکار بسته شد*✅' edit_inline(msg.message_id, text) Canswer(msg.cb_id, "به دلیل اتمام زمان استفاده، پنل به صورت خودکار بسته میشود 😊" ,true) elseif not is_mod1(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما مدیر نیستید 🚫\nبرای خرید ربات به پیوی :\n💢 "..MaTaDoRby.."\nیا به کانال زیر مراجعه کنید :\n💢 "..MaTaDoRch.."" ,true) elseif not is_req(matches[2], msg.from.id) then Canswer(msg.cb_id, "شما این فهرست را درخواست نکردید 🚷🤖" ,true) else
 		local i = 1
 		if next(data[tostring(matches[2])]['mods']) == nil then --fix way
-			text = "💢هیچ مدیری ثبت نشده است💢"
+			text = "_هیچ مدیری برای گروه تعیین نشده_"
 		else
-			text = "لیست مدیران گروه👮\n"
+			text = "_لیست مدیران گروه :_\n"
 			for k,v in pairs(data[tostring(matches[2])]['mods']) do
 				text = text ..i.. '- '..v..' [' ..k.. '] \n'
 				i = i + 1
@@ -2363,10 +2357,10 @@ if matches[1] == '/modlist' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "✨پاکسازی مدیران✨", callback_data="/cleanmods:"..matches[2]}
+				{text = "✦ برکناری تمام مدیران", callback_data="/cleanmods:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2378,9 +2372,9 @@ if matches[1] == '/cleanmods' then
 		get_alert(msg.cb_id, "شما صاحب گروه نیستید")
 	else
 		if next(data[tostring(matches[2])]['mods']) == nil then
-			text = "💢هیچ مدیری ثبت نشده است💢"
+			text = "_هیچ مدیری برای گروه تعیین نشده_"
 		else
-			text = "✔تمام مدیران برکنار شدند✔"
+			text = "_تمام مدیران از مقام خود برکنار شدند_"
 			for k,v in pairs(data[tostring(matches[2])]['mods']) do
 				data[tostring(matches[2])]['mods'][tostring(k)] = nil
 				save_data(_config.moderation.data, data)
@@ -2389,7 +2383,7 @@ if matches[1] == '/cleanmods' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/modlist:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/modlist:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2413,7 +2407,7 @@ if matches[1] == '/bans' then
 				{text = "✦ پاک کردن لیست بن ", callback_data="/cleanbans:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2434,10 +2428,10 @@ if matches[1] == '/silentlist' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "✨پالسازی لیست سکوت✨", callback_data="/cleansilentlist:"..matches[2]}
+				{text = "✦ پاک کردن لیست سایلنت", callback_data="/cleansilentlist:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2457,7 +2451,7 @@ if matches[1] == '/cleansilentlist' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/silentlist:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/silentlist:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2477,7 +2471,7 @@ if matches[1] == '/cleanbans' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/bans:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/bans:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2489,12 +2483,12 @@ if matches[1] == '/link' then
 		if not linkgp then
 			text = "_ابتدا با دستور_ setlink/ _لینک جدیدی برای گروه تعیین کنید_"
 		else
-			text = "[💫برای ورود به گروه کلیک کنید💫]("..linkgp..")"
+			text = "[| کلیک کنید |]("..linkgp..")"
 		end
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2515,7 +2509,7 @@ if matches[1] == '/rules' then
 				{text = "✦ پاک کردن", callback_data="/cleanrules:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2534,7 +2528,7 @@ if matches[1] == '/cleanrules' then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "💠بازگشت💠", callback_data="/rules:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/rules:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2558,7 +2552,7 @@ end
 				{text = "✦ حذف لیست سفید", callback_data="/cleanwhitelists:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2579,7 +2573,7 @@ if matches[1] == '/cleanwhitelists' then
 				keyboard.inline_keyboard = {
 
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2600,7 +2594,7 @@ if not redis:get("ReqMenu:"..matches[2]) then text = '📌*پنل شیشه‌ا�
 				{text = "✦ حذف پیام خوشامد", callback_data="/cleanwlcmsg:"..matches[2]}
 			},
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2621,7 +2615,7 @@ local keyboard = {}
 				keyboard.inline_keyboard = {
 
 			{ 
-				{text = "💠بازگشت💠", callback_data="/more:"..matches[2]}
+				{text = "✦ بازگشت 🔙", callback_data="/more:"..matches[2]}
 			}
 		}
 		edit_inline(msg.message_id, text, keyboard)
@@ -2629,14 +2623,14 @@ end
 end
          -- ####################### About Us ####################### --
 if matches[1] == '/matador' then
-	local text = 'در صورتی که دو گروه خود دچار مشکل شده اید میتوانید با فرستادن دستور `سودو کمکم کن` درخواست کمک برای تیم ما بفرستید 🌹'
+	local text = 'پشتیبانی'
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "💸نرخ فروش ربات💸", callback_data="/nerkh:"..matches[2]}
+			{text = "✦ نرخ ربات 💰", callback_data="/nerkh:"..matches[2]}
 		},
 		{
-			{text= '💠بازگشت💠' ,callback_data = '/option:'..matches[2]}
+			{text= '✦ بازگشت 🔙' ,callback_data = '/option:'..matches[2]}
 		}				
 	}
     edit_inline(msg.message_id, text, keyboard)
